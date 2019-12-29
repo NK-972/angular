@@ -3,11 +3,12 @@ import {FormBuilder, FormGroup} from '@angular/forms';
 
 /** @title Fixed sidenav */
 @Component({
-  selector: 'sidenav-fixed-example',
-  templateUrl: 'sidenav-fixed-example.html',
-  styleUrls: ['sidenav-fixed-example.css'],
+  selector: 'my-app',
+  templateUrl: 'app.component.html',
+  styleUrls: ['app.component.css'],
 })
-export class SidenavFixedExample {
+
+export class AppComponent {
   options: FormGroup;
 
   constructor(fb: FormBuilder) {
