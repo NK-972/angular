@@ -1,0 +1,35 @@
+p {
+  font-family: Lato;
+}
+
+.produit{
+  display: inline-block;
+  width:  25em;
+  height: 35em;
+ 
+}
+
+.produit .mypanel{
+  display: inline-block;
+  width: 25em;
+  height: 35em;
+  border-style: solid none none none;
+  border-width: 1px;
+  
+}
+
+.produit .mypanel .descision{
+  float: left;
+  width: 50%;
+  height: 27em;
+  border-style: none none none none;
+  border-width: 1px;
+  margin-left: 10px;
+}
+
+.produit .mypanel .information{
+  float: left;
+  width: 50%;
+  height: 20em;
+  border-style: none none none none;
+}
