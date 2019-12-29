@@ -5,11 +5,13 @@ import {CdkTreeModule} from '@angular/cdk/tree';
 import {HttpClientModule} from '@angular/common/http';
 import {NgModule} from '@angular/core';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
-import {} from '/bootst'
+
 import {BrowserModule} from '@angular/platform-browser';
 import {platformBrowserDynamic} from '@angular/platform-browser-dynamic';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+
 import {SidenavFixedExample} from './app/sidenav-fixed-example';
+import {ProduitsComponent} from './app/produits/produits.component';
 
 @NgModule({
   exports: [
@@ -28,9 +30,9 @@ export class DemoMaterialModule {}
     DemoMaterialModule,
     ReactiveFormsModule,
   ],
-  entryComponents: [SidenavFixedExample],
-  declarations: [SidenavFixedExample],
-  bootstrap: [SidenavFixedExample],
+  entryComponents: [SidenavFixedExample, ProduitsComponent],
+  declarations: [SidenavFixedExample, ProduitsComponent],
+  bootstrap: [SidenavFixedExample, ProduitsComponent],
   providers: []
 })
 export class AppModule {}
