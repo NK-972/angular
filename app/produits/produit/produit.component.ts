@@ -8,7 +8,7 @@ import {Product} from '../product';
   styleUrls: ['./produit.component.css']
 })
 export class ProduitComponent implements OnInit {
-  @Input() data: Product;
+  @Input() data: string;
   utilitaire: Utilitaire = new Utilitaire();
 
   constructor() { }

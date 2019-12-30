@@ -45,14 +45,11 @@ export class ProduitsComponent implements OnInit {
     console.log("Affichage JSON produit"+this.json_produits);
     console.log("Test getData "+this.utilitaire.getData(this.json_produits, "Bouteille d'eau 21811", 2, 'Recette'));
     this.key_product = Object.keys(this.json_produits);
-    console.log(this.key_product[0].includes('J'));
-    console.log(this.utilitaire.getAllOcc(this.key_product, ' '+this.turn));
+    console.log("Product key "+this.key_product);
+    console.log("Product get produit tour "+this.utilitaire.getAllOcc(this.key_product, ' '+this.turn));
     this.utilitaire.getAllOcc(this.key_product, ' '+this.turn).forEach(function (value) {
-      console.log("mytest "+this.json_produits[value]);
-      //console.log(this.createProduit(this.json_produits[value] as string[]));
-      //this.panel_produits.push(this.createProduit(this.json_produits[value]));
+      console.log(value);     
     });
-    console.log(this.panel_produits);
   }
 
 }
