@@ -21,4 +21,14 @@ export class Utilitaire {
     return null;
   }
 
+  public getAllOcc(array : string[], find: string): string[]{
+    let l: string[] = [];
+    array.forEach(function (value) {
+      if (value.includes(find)){
+        l.push(value);
+      }
+    });
+    return l;
+  }
+
 }

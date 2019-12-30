@@ -1,22 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Utilitaire } from '../utilitaire';
-
-interface Product{
-  id : string
-  , Prix : Number
-  , RD : Number
-  , Installations: string[]
-  , InstallationSelected: string
-  , Production: Number
-  , Qualite: Number
-  , IP: Number
-  , IT: Number
-  , Notoriete: Number
-  , Demande: Number
-  , Stock: Number
-  , MB: Number
-  , TMB: Number
-}
+import {Product} from './product';
 
 @Component({
   selector: 'app-produits',
@@ -31,8 +15,10 @@ export class ProduitsComponent implements OnInit {
   json_produits: JSON;
   key_product: string[];
 
+  panel_produits: Product[] = [];
 
-  createProduit(name: string,data: string[]){
+
+  createProduit(data: string[]):Product{
     let produit : Product;
     return produit ={
       id : this.utilitaire.getData(this.json_produits, name, this.turn, 'Nom du produit') + this.utilitaire.getData(this.json_produits, "Bouteille d'eau", this.turn, 'recette')
@@ -59,9 +45,12 @@ export class ProduitsComponent implements OnInit {
     console.log(this.utilitaire.getData(this.json_produits, "Bouteille d'eau", 2, 'recette'));
     this.key_product = Object.keys(this.json_produits);
     console.log(this.key_product[0].includes('J'));
-
-    console.log(this.key_product.findIndex(this.isLargeNumber));
-
+    console.log(this.utilitaire.getAllOcc(this.key_product, ' '+this.turn));
+    this.utilitaire.getAllOcc(this.key_product, ' '+this.turn).forEach(function (value) {
+      console.log(this.createProduit(this.json_produits[value]));
+      this.panel_produits.push(this.createProduit(this.json_produits[value]));
+    });
+    console.log(this.panel_produits);
   }
 
 }

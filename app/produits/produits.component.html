@@ -7,11 +7,18 @@
   </ng-container>
 </ul>
 
+<ul>
+  <ng-container *ngFor="let key of panel_produit">
+        <li>{{ key }}</li>
+
+  </ng-container>
+</ul>
+
 <!-- *ngIf='key.includes(turn)'-->
 
-<div *ngFor="let key of key_product"> 
-    <ng-container *ngIf="key.includes(turn)">
-        <app-produit  [data]=json_produits[key] [id_Product]=key></app-produit>
+<div *ngFor="let key of panel_produit"> 
+    <ng-container *ngIf="key">
+        <app-produit  [data]=key></app-produit>
     </ng-container> 
 </div>
 

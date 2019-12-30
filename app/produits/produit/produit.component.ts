@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Utilitaire } from '../../utilitaire';
+import {Product} from '../product';
 
 @Component({
   selector: 'app-produit',
@@ -7,14 +8,12 @@ import { Utilitaire } from '../../utilitaire';
   styleUrls: ['./produit.component.css']
 })
 export class ProduitComponent implements OnInit {
-  @Input() data: Array<string>;
-  @Input() id_Product: string;
+  @Input() data: Product;
   utilitaire: Utilitaire = new Utilitaire();
 
   constructor() { }
 
   ngOnInit() {
     console.log(this.data);
-    console.log(this.id_Product);
   }
 }
