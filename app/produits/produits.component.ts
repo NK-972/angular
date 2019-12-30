@@ -18,27 +18,16 @@ export class ProduitsComponent implements OnInit {
   panel_produits: Product[] = [];
 
 
-  createProduit(id : string, data: string[]):Product{
-    let produit : Product;
-    return produit ={
-      id : id
-      , Prix : Number(this.utilitaire.getData(this.json_produits, name, this.turn, 'Prix'))
-      , RD : Number(this.utilitaire.getData(this.json_produits, name, this.turn, 'R&D'))
-      , Installations: []
-      , InstallationSelected: ''
-      , Production: Number(this.utilitaire.getData(this.json_produits, name, this.turn, 'Productio'))
-      , Qualite: Number(this.utilitaire.getData(this.json_produits, name, this.turn, 'Qualité'))
-      , IP: Number(this.utilitaire.getData(this.json_produits, name, this.turn, 'Indice prix'))
-      , IT: Number(this.utilitaire.getData(this.json_produits, name, this.turn, 'Indice technique'))
-      , Notoriete: Number(this.utilitaire.getData(this.json_produits, name, this.turn, 'Notoriété'))
-      , Demande: Number(this.utilitaire.getData(this.json_produits, name, this.turn, 'Demande'))
-      , Stock: Number(this.utilitaire.getData(this.json_produits, name, this.turn, 'Stock'))
-      , MB: Number(this.utilitaire.getData(this.json_produits, name, this.turn, 'Marge brute'))
-      , TMB: Number(this.utilitaire.getData(this.json_produits, name, this.turn, 'taux de marge brute')) 
-    }
-  }
+  
 
   constructor() { }
+
+  createProduit(id : string){
+    
+  }
+
+
+
 
   ngOnInit() {
     this.json_produits = this.utilitaire.StringToTable(this.produits);
@@ -48,8 +37,13 @@ export class ProduitsComponent implements OnInit {
     console.log("Product key "+this.key_product);
     console.log("Product get produit tour "+this.utilitaire.getAllOcc(this.key_product, ' '+this.turn));
     this.utilitaire.getAllOcc(this.key_product, ' '+this.turn).forEach(function (value) {
-      console.log(value);     
+      console.log(value);
+      this.test();
+      this.createProduit('test');   
     });
-  }
 
+  }
+  test(){
+
+  }
 }
