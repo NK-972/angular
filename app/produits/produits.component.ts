@@ -18,10 +18,10 @@ export class ProduitsComponent implements OnInit {
   panel_produits: Product[] = [];
 
 
-  createProduit(data: string[]):Product{
+  createProduit(id : string, data: string[]):Product{
     let produit : Product;
     return produit ={
-      id : this.utilitaire.getData(this.json_produits, name, this.turn, 'Nom du produit') + this.utilitaire.getData(this.json_produits, "Bouteille d'eau", this.turn, 'recette')
+      id : id
       , Prix : Number(this.utilitaire.getData(this.json_produits, name, this.turn, 'Prix'))
       , RD : Number(this.utilitaire.getData(this.json_produits, name, this.turn, 'R&D'))
       , Installations: []
@@ -42,13 +42,15 @@ export class ProduitsComponent implements OnInit {
 
   ngOnInit() {
     this.json_produits = this.utilitaire.StringToTable(this.produits);
-    console.log(this.utilitaire.getData(this.json_produits, "Bouteille d'eau", 2, 'recette'));
+    console.log("Affichage JSON produit"+this.json_produits);
+    console.log("Test getData "+this.utilitaire.getData(this.json_produits, "Bouteille d'eau 21811", 2, 'Recette'));
     this.key_product = Object.keys(this.json_produits);
     console.log(this.key_product[0].includes('J'));
     console.log(this.utilitaire.getAllOcc(this.key_product, ' '+this.turn));
     this.utilitaire.getAllOcc(this.key_product, ' '+this.turn).forEach(function (value) {
-      console.log(this.createProduit(this.json_produits[value]));
-      this.panel_produits.push(this.createProduit(this.json_produits[value]));
+      console.log("mytest "+this.json_produits[value]);
+      //console.log(this.createProduit(this.json_produits[value] as string[]));
+      //this.panel_produits.push(this.createProduit(this.json_produits[value]));
     });
     console.log(this.panel_produits);
   }
